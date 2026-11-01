@@ -29,7 +29,7 @@ Commands available in `lumine-workspace`:
 
 Choose Focus Pane beside Detach Pane in a center pane's context menu to enlarge that pane, including an inactive pane. Running `pane-focus:toggle` from the command palette enlarges the active center pane. Click the blurred background or run the command again to restore the normal layout.
 
-During focus mode, directional pane navigation treats the center as a single pane. Explicitly activating another center pane ends focus mode and keeps that pane active. Switching tabs within the same pane, opening the command palette, or moving focus to a dock leaves focus mode enabled.
+During focus mode, directional pane navigation treats the center as a single pane. Explicitly activating another center pane ends focus mode and keeps that pane active. Switching tabs within the same pane, opening the command palette, or moving focus to a dock leaves focus mode enabled. Animated width changes respect the editor's Soft Wrap Debounce Interval and settle at the final width when the animation ends.
 
 ## Customization
 
