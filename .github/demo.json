@@ -1,0 +1,92 @@
+{
+  "title": "pane-focus",
+  "description": "Keep notes, source and a summary in three columns.",
+  "recordedOn": "2026-11-01",
+  "sourceRevision": null,
+  "themeSourceRevision": "9405c9be05928ac26aafb432733ab89309b4e712",
+  "mode": "normal",
+  "fontSettings": "default",
+  "scenario": "demo.js",
+  "recipeHash": "5096d67080be16aabc94ca0fec8b64ee97ea6177614e5e46a5ee07f79e53be1b",
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "electron": "45.2.1",
+    "chrome": "156.0.8078.75",
+    "devicePixelRatio": 1,
+    "locale": "en-GB",
+    "fontFamily": "Fira Code, Menlo, DejaVu Sans Mono, Consolas, monospace",
+    "fontSize": 14,
+    "themes": ["one-day-syntax", "one-day-ui"]
+  },
+  "viewport": { "width": 1200, "height": 780 },
+  "cornerRadius": 10,
+  "privacy": { "version": 1, "location": "neutral", "textChecked": true },
+  "sources": {
+    "editor": {
+      "revision": "e1fda7329bfe3ca94e9c7a83a951ae59a30b522a",
+      "dirty": true,
+      "workingTreeHash": "d2cfb6dfef2c3325a2e18448210cfcc88d6ff9c49ef3cc0115e5a6134d1e87ec"
+    },
+    "package": {
+      "revision": null,
+      "dirty": true,
+      "workingTreeHash": "aa3fa906d97f234f6adc47af182794d7205d8fb196d6a43e0d0b305466daac81"
+    },
+    "pane-focus": {
+      "revision": null,
+      "dirty": true,
+      "workingTreeHash": "aa3fa906d97f234f6adc47af182794d7205d8fb196d6a43e0d0b305466daac81"
+    },
+    "language-javascript": {
+      "revision": "190757bc82639a522af62b99554a162e3fd87c80",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "one-theme": {
+      "revision": "9405c9be05928ac26aafb432733ab89309b4e712",
+      "dirty": true,
+      "workingTreeHash": "77625af5ea6e94ab7ca0505c3f3642dacc3a0ddbeb8425707f6258f6b4a7d312"
+    },
+    "title-bar": {
+      "revision": "36cefdff27dd0647160001ce78999a98eb1c1548",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "tree-view": {
+      "revision": "a6de2a5bff09dc87032141b29c598e3c1178e5fb",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "fixtures": [
+    {
+      "file": "Signal Board/README.md",
+      "sha256": "aaec028fc7085545de00f03f8f6b3a6cfaa1b8e185347ce410ed9f6a7507c524"
+    },
+    {
+      "file": "Signal Board/src/signals.js",
+      "sha256": "a2ea488c4ed0931003ccdf1d313fa992e91ab0cbe1febce5550c55ce458696aa"
+    },
+    {
+      "file": "Signal Board/src/summary.js",
+      "sha256": "89605ed0881804755dd10be7eaf2c96611438c100817f4a0b1057af5a30b7201"
+    }
+  ],
+  "images": [
+    {
+      "file": "demo-layout.png",
+      "label": "Keep notes, source and a summary in three columns.",
+      "width": 1200,
+      "height": 780,
+      "sha256": "d651172b197a96735a08800473622dcf7066a117120b872765186760b35357da"
+    },
+    {
+      "file": "demo.png",
+      "label": "Bring the active pane forward while preserving the split layout.",
+      "width": 1200,
+      "height": 780,
+      "sha256": "e5fe6c86da6f332c1f81055a355511944106968ba42e8dd2e13f62aaa955d50c"
+    }
+  ]
+}

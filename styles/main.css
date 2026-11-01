@@ -1,0 +1,51 @@
+lumine-pane-container {
+  --pane-focus-inset: 24px;
+  --pane-focus-blur: var(--overlay-backdrop-blur, 3px);
+  --pane-focus-duration: 160ms;
+  --pane-focus-easing: ease-out;
+}
+
+lumine-pane-container.pane-focus {
+  isolation: isolate;
+
+  .pane-focus-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 40;
+
+    background: var(--overlay-backdrop-color);
+    opacity: var(--overlay-backdrop-opacity);
+    backdrop-filter: blur(var(--pane-focus-blur));
+  }
+
+  lumine-pane-axis {
+    z-index: auto;
+  }
+
+  lumine-pane.pane-focus-pane {
+    position: fixed;
+    left: calc(var(--pane-focus-left, 0px) + var(--pane-focus-inset));
+    top: calc(var(--pane-focus-top, 0px) + var(--pane-focus-inset));
+    width: max(0px, calc(var(--pane-focus-width, 0px) - 2 * var(--pane-focus-inset)));
+    height: max(0px, calc(var(--pane-focus-height, 0px) - 2 * var(--pane-focus-inset)));
+    margin: 0;
+    z-index: 41;
+    box-sizing: border-box;
+  }
+}
+
+lumine-pane.pane-focus-pane {
+  outline: 1px solid var(--pane-item-border-color);
+  border-radius: var(--ui-border-radius, 4px);
+  background: var(--pane-item-background-color);
+  box-shadow:
+    0 4px 12px -4px var(--modal-shadow-near-color, rgb(0 0 0 / 30%)),
+    0 20px 48px -12px var(--modal-shadow-far-color, rgb(0 0 0 / 40%));
+  overflow: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  lumine-pane-container {
+    --pane-focus-duration: 0ms;
+  }
+}

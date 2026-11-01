@@ -1,0 +1,104 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Checks on ${{ matrix.os }} (Node ${{ matrix.node }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            node: 24
+          - os: macos-latest
+            node: 24
+          - os: windows-latest
+            node: 24
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Lint
+        run: npm run lint
+      - name: Check formatting
+        run: npm run format:check
+      - name: Check package contents
+        run: npm pack --dry-run
+
+  integration:
+    name: Lumine integration specs on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    defaults:
+      run:
+        shell: bash
+    env:
+      LUMINE_JASMINE_REPORTER: list
+    steps:
+      - name: Enable Git symlinks on Windows
+        if: runner.os == 'Windows'
+        run: git config --global core.symlinks true
+      - uses: actions/checkout@v7
+        with:
+          path: pane-focus
+      - uses: actions/checkout@v7
+        with:
+          repository: lumine-code/lumine
+          path: lumine
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: lumine/.nvmrc
+          cache: npm
+          cache-dependency-path: |
+            pane-focus/package-lock.json
+            lumine/package-lock.json
+      - name: Install Linux build and headless-display dependencies
+        if: runner.os == 'Linux'
+        working-directory: lumine
+        timeout-minutes: 15
+        run: node script/install-headless-dependencies.js
+      - name: Use HTTPS for GitHub git dependencies
+        run: git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
+      - name: Install package dependencies
+        working-directory: pane-focus
+        run: npm ci --ignore-scripts
+      - name: Install editor dependencies
+        working-directory: lumine
+        run: |
+          install() { npm ci --ignore-scripts; }
+          install || install || install
+      - name: Download the Electron binary
+        working-directory: lumine
+        run: node script/install-electron.js
+      - name: Rebuild native modules for Electron
+        working-directory: lumine
+        run: npm run build -- --types prod,optional
+      - name: Run the Jasmine spec suite
+        working-directory: lumine
+        timeout-minutes: 20
+        run: |
+          prefix=""
+          if [ "$RUNNER_OS" = "Linux" ]; then prefix="xvfb-run --auto-servernum"; fi
+          $prefix npm start -- --test ../pane-focus/spec

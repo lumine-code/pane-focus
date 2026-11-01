@@ -1,0 +1,52 @@
+{
+  "name": "pane-focus",
+  "author": "lumine-code",
+  "description": "Temporarily enlarge the active pane over the workspace.",
+  "repository": "https://github.com/lumine-code/pane-focus",
+  "bugs": {
+    "url": "https://github.com/lumine-code/pane-focus/issues"
+  },
+  "keywords": [
+    "distraction-free",
+    "maximize",
+    "zoom",
+    "workspace"
+  ],
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {
+    "lumine": "^1.0.0"
+  },
+  "main": "./lib/main",
+  "files": [
+    "keymaps",
+    "lib",
+    "spec",
+    "styles",
+    ".github/demo-layout.png",
+    ".github/demo.png",
+    ".github/demo.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "lumine --test spec",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "providedServices": {
+    "background-tips.provider": {
+      "versions": {
+        "1.0.0": "provideBackgroundTips"
+      }
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-n": "^18.5.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10"
+  }
+}
