@@ -2,8 +2,8 @@
   "title": "pane-focus",
   "description": "Keep notes, source and a summary in three columns.",
   "recordedOn": "2026-11-01",
-  "sourceRevision": null,
-  "themeSourceRevision": "9405c9be05928ac26aafb432733ab89309b4e712",
+  "sourceRevision": "006f52c3ec9e8bb9868ccbf2253b1a42b97fb55d",
+  "themeSourceRevision": "89cf6ed4c8e12e6043230644936026d7eb28d2ef",
   "mode": "normal",
   "fontSettings": "default",
   "scenario": "demo.js",
@@ -24,19 +24,19 @@
   "privacy": { "version": 1, "location": "neutral", "textChecked": true },
   "sources": {
     "editor": {
-      "revision": "e1fda7329bfe3ca94e9c7a83a951ae59a30b522a",
-      "dirty": true,
-      "workingTreeHash": "d2cfb6dfef2c3325a2e18448210cfcc88d6ff9c49ef3cc0115e5a6134d1e87ec"
+      "revision": "83907d849a599360ba0a62c641cf49fd33a671c5",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "package": {
-      "revision": null,
-      "dirty": true,
-      "workingTreeHash": "aa3fa906d97f234f6adc47af182794d7205d8fb196d6a43e0d0b305466daac81"
+      "revision": "006f52c3ec9e8bb9868ccbf2253b1a42b97fb55d",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "pane-focus": {
-      "revision": null,
-      "dirty": true,
-      "workingTreeHash": "aa3fa906d97f234f6adc47af182794d7205d8fb196d6a43e0d0b305466daac81"
+      "revision": "006f52c3ec9e8bb9868ccbf2253b1a42b97fb55d",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "language-javascript": {
       "revision": "190757bc82639a522af62b99554a162e3fd87c80",
@@ -44,9 +44,9 @@
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "one-theme": {
-      "revision": "9405c9be05928ac26aafb432733ab89309b4e712",
-      "dirty": true,
-      "workingTreeHash": "77625af5ea6e94ab7ca0505c3f3642dacc3a0ddbeb8425707f6258f6b4a7d312"
+      "revision": "89cf6ed4c8e12e6043230644936026d7eb28d2ef",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "title-bar": {
       "revision": "36cefdff27dd0647160001ce78999a98eb1c1548",
@@ -79,14 +79,14 @@
       "label": "Keep notes, source and a summary in three columns.",
       "width": 1200,
       "height": 780,
-      "sha256": "d651172b197a96735a08800473622dcf7066a117120b872765186760b35357da"
+      "sha256": "709d09ace55eea692abd1a67bb3f0e17ba0c018c9a57284d91c7337d252567fc"
     },
     {
       "file": "demo.png",
       "label": "Bring the active pane forward while preserving the split layout.",
       "width": 1200,
       "height": 780,
-      "sha256": "e5fe6c86da6f332c1f81055a355511944106968ba42e8dd2e13f62aaa955d50c"
+      "sha256": "15b995a62e3b5e5d4d276438816c2b170cf007a6d6b245fa41f047d33de4192a"
     }
   ]
 }
